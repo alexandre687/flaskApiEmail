@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     # Porta padrão do app Flask
-    PORT=80 \
+    PORT=448 \
     # Pasta de cache do tldextract (evita escrever em /root)
     TLD_EXTRACT_CACHE=/tmp/tldextract_cache
 
@@ -35,7 +35,7 @@ RUN useradd -m appuser && chown -R appuser:appuser /app /tmp
 USER appuser
 
 # Expõe a porta
-EXPOSE 80
+EXPOSE 448
 
 # Healthcheck simples no endpoint /health
 HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
