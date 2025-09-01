@@ -368,6 +368,10 @@ if os.getenv("ENABLE_CORS", "true").lower() in ("1","true","yes"):
 def health():
     return jsonify({"ok": True})
 
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify({"OK - Flask is running": True})
+
 @app.route("/run", methods=["POST"])
 def run_endpoint():
     """
