@@ -1,14 +1,23 @@
+version: "3.9"
+
 services:
-  app:
-    image: email-finder-flask:latest
+  email-finder:
     build: .
+    container_name: email-finder-flask
     ports:
-      - "8080:8080"
+      - "448:448"
     environment:
+      PORT: "448"
       MAX_PAGES: "60"
       REQUEST_TIMEOUT: "12"
       CRAWL_DELAY_SEC: "0.25"
       SMTP_FROM: "check@example.com"
       HELO_DOMAIN: "example.com"
       ENABLE_CORS: "true"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:448/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
     restart: unless-stopped
