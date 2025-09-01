@@ -407,5 +407,4 @@ def run_endpoint():
     return jsonify(result)
 
 if __name__ == "__main__":
-    # flask run padrão
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "448")))
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "80")))
