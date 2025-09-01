@@ -35,7 +35,7 @@ RUN useradd -m appuser && chown -R appuser:appuser /app /tmp
 USER appuser
 
 # Expõe a porta
-EXPOSE 448
+EXPOSE 80
 
 # Healthcheck simples no endpoint /health
 HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
