@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     # Porta padrão do app Flask
-    PORT=448 \
+    PORT=80 \
     # Pasta de cache do tldextract (evita escrever em /root)
     TLD_EXTRACT_CACHE=/tmp/tldextract_cache
 
