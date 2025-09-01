@@ -41,6 +41,9 @@ EXPOSE 448
 HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
   CMD curl -fsS http://127.0.0.1:${PORT}/health || exit 1
 
+HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
+  CMD curl -fsS http://127.0.0.1:${PORT}/ || exit 1
+
 # Comando de execução (gunicorn é mais estável que flask dev server)
 # Ajuste de workers/threads conforme sua infra.
 CMD exec gunicorn app:app \
