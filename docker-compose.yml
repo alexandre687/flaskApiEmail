@@ -1,0 +1,14 @@
+services:
+  app:
+    image: email-finder-flask:latest
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      MAX_PAGES: "60"
+      REQUEST_TIMEOUT: "12"
+      CRAWL_DELAY_SEC: "0.25"
+      SMTP_FROM: "check@example.com"
+      HELO_DOMAIN: "example.com"
+      ENABLE_CORS: "true"
+    restart: unless-stopped
